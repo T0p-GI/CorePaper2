@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCore Paper 2 — T Level DSS Revision Arena</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+<body>
+  <!-- Animated background layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Top HUD -->
+  <header class="hud">
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <div class="hud-brand">
+      <span class="logo-mark">◆</span>
+      <span class="logo-text">CYBER<span class="accent">CORE</span> <small>PAPER 2</small></span>
+    </div>
+    <div class="hud-stats">
+      <div class="stat" title="Experience points"><span class="stat-ico">✦</span><span id="statXP">0</span> XP</div>
+      <div class="stat" title="Level"><span class="stat-ico">⬢</span> Lv <span id="statLevel">1</span></div>
+      <div class="stat" title="Day streak"><span class="stat-ico">🔥</span> <span id="statStreak">0</span></div>
+      <button id="resetBtn" class="btn-ghost" title="Reset all progress">Reset</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar navigation -->
+    <aside id="sidebar" class="sidebar">
+      <nav id="navTree" class="nav-tree"><!-- built by app.js --></nav>
+      <div class="nav-footer">
+        <button class="nav-special" data-route="dashboard" style="background:linear-gradient(90deg,#2a0d12,#46141c);border:1px solid var(--line)">📊 Dashboard</button>
+        <button class="nav-special" data-route="glossary" style="background:linear-gradient(90deg,#2a0d12,#46141c);border:1px solid var(--line)">📚 Glossary</button>
+        <button class="nav-special" data-route="boss">👾 BOSS MODE</button>
+        <button class="nav-special ai" data-route="ai">🤖 AI Study Bot</button>
+      </div>
+    </aside>
+
+    <!-- Main view -->
+    <main id="view" class="view"><!-- rendered by app.js --></main>
+  </div>
+
+  <!-- Floating AI bot launcher (always available while revising) -->
+  <button id="aiFab" class="ai-fab" title="Ask the Study Bot">🤖</button>
+
+  <!-- Toast container -->
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <!-- Core registry + shared constants -->
+  <script src="js/data.js"></script>
+  <!-- Content areas (each registers itself with CONTENT) -->
+  <script src="js/co4.js"></script>
+  <script src="js/co5.js"></script>
+  <script src="js/co6.js"></script>
+  <script src="js/co7.js"></script>
+  <script src="js/co8.js"></script>
+  <!-- Boss Mode question bank + nutshell summaries -->
+  <script src="js/boss.js"></script>
+  <!-- Deep-dive Learn supplements, Deep Research (beyond-spec), and Glossary.
+       These are NOT referenced by Boss Mode or the AI bot — they stay walled off. -->
+  <script src="js/learnplus.js"></script>
+  <script src="js/research.js"></script>
+  <script src="js/glossary.js"></script>
+  <!-- Application engine -->
+  <script src="js/app.js"></script>
+</body>
+</html>
